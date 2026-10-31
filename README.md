@@ -256,6 +256,18 @@ This project is fully configured for deployment on [Netlify](https://www.netlify
 
 ## 11. Screenshots & Previews
 
+### Visual Evidence & UI Gallery
+
+| Scenario / Screen | Preview | Description |
+| :--- | :--- | :--- |
+| **Desktop Split-Screen Login** | <img src="docs/screenshots/login-desktop.png" width="360" alt="Desktop Login" /> | Indigo branding hero banner, centered login card, `@hbplus.fit` corporate badge |
+| **Access Restricted (Non-Domain Rejection)** | <img src="docs/screenshots/login-access-restricted.png" width="360" alt="Access Restricted" /> | Error banner: *"Access restricted. Please login using your official domain email."* |
+| **Session Validation Loading** | <img src="docs/screenshots/session-loading.png" width="360" alt="Validating Session" /> | Splash screen with animated spinner while session and domain membership are validated |
+| **Authenticated Workspace Dashboard** | <img src="docs/screenshots/dashboard-authenticated.png" width="360" alt="Authenticated Dashboard" /> | Responsive corporate dashboard with profile card, verification badge, and security policies |
+| **Session Restoration on Refresh** | <img src="docs/screenshots/dashboard-session-restored.png" width="360" alt="Session Restored" /> | Verified persistent authentication without re-login after browser refresh |
+| **Mobile Responsive Login** | <img src="docs/screenshots/login-mobile.png" width="200" alt="Mobile Login" /> | Single-column mobile layout with 52px touch-friendly Google SSO button |
+| **Live Netlify Production Deployment** | <img src="docs/screenshots/live-login.png" width="360" alt="Live Production Login" /> | Operational SPA deployment on `harmonious-squirrel-5cbd03.netlify.app` |
+
 ### Desktop Split-Screen Login (`>= 900px`)
 ```text
 +-------------------------------------------------------------------------+
