@@ -48,7 +48,7 @@ This guide walks through configuring Firebase Authentication, Google Identity Pr
 
 In Firebase Console under **Authentication > Settings > Authorized domains**:
 1. Add `localhost` (pre-configured).
-2. Add your Netlify production domain (e.g., `hbplus-workspace.netlify.app` or custom domain `workspace.hbplus.fit`).
+2. Add your Netlify production domain: `harmonious-squirrel-5cbd03.netlify.app` (and custom domain e.g. `workspace.hbplus.fit` if configured).
 3. Click **Add domain**.
 
 > [!IMPORTANT]

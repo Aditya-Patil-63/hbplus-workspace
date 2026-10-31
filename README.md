@@ -1,8 +1,15 @@
 # HB Plus Workspace
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Netlify-00C7B7?style=for-the-badge&logo=netlify)](https://harmonious-squirrel-5cbd03.netlify.app)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Aditya--Patil--63%2Fhbplus--workspace-181717?style=for-the-badge&logo=github)](https://github.com/Aditya-Patil-63/hbplus-workspace)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![Expo SDK](https://img.shields.io/badge/Expo_SDK-v58-000020?style=for-the-badge&logo=expo)](https://expo.dev/)
+[![Firebase](https://img.shields.io/badge/Firebase-v13-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
+
 > Enterprise Workspace & Single Sign-On (SSO) Portal built with **Expo**, **React Native for Web**, and **Firebase Authentication**, strictly restricted to authorized company domain accounts (`@hbplus.fit`).
 
-**Live Demo**: [https://harmonious-squirrel-5cbd03.netlify.app](https://harmonious-squirrel-5cbd03.netlify.app)
+**Live Demo Deployment**: [https://harmonious-squirrel-5cbd03.netlify.app](https://harmonious-squirrel-5cbd03.netlify.app)  
+**GitHub Repository**: [https://github.com/Aditya-Patil-63/hbplus-workspace](https://github.com/Aditya-Patil-63/hbplus-workspace)
 
 ---
 
@@ -260,13 +267,51 @@ This project is fully configured for deployment on [Netlify](https://www.netlify
 
 | Scenario / Screen | Preview | Description |
 | :--- | :--- | :--- |
-| **Desktop Split-Screen Login** | <img src="docs/screenshots/login-desktop.png" width="360" alt="Desktop Login" /> | Indigo branding hero banner, centered login card, `@hbplus.fit` corporate badge |
-| **Access Restricted (Non-Domain Rejection)** | <img src="docs/screenshots/login-access-restricted.png" width="360" alt="Access Restricted" /> | Error banner: *"Access restricted. Please login using your official domain email."* |
-| **Session Validation Loading** | <img src="docs/screenshots/session-loading.png" width="360" alt="Validating Session" /> | Splash screen with animated spinner while session and domain membership are validated |
-| **Authenticated Workspace Dashboard** | <img src="docs/screenshots/dashboard-authenticated.png" width="360" alt="Authenticated Dashboard" /> | Responsive corporate dashboard with profile card, verification badge, and security policies |
-| **Session Restoration on Refresh** | <img src="docs/screenshots/dashboard-session-restored.png" width="360" alt="Session Restored" /> | Verified persistent authentication without re-login after browser refresh |
-| **Mobile Responsive Login** | <img src="docs/screenshots/login-mobile.png" width="200" alt="Mobile Login" /> | Single-column mobile layout with 52px touch-friendly Google SSO button |
-| **Live Netlify Production Deployment** | <img src="docs/screenshots/live-login.png" width="360" alt="Live Production Login" /> | Operational SPA deployment on `harmonious-squirrel-5cbd03.netlify.app` |
+| **Desktop Split-Screen Login** | <img src="docs/screenshots/login-desktop.png" width="320" alt="Desktop Login" /> | Indigo branding hero banner, centered login card, `@hbplus.fit` corporate badge |
+| **Access Restricted (Non-Domain Rejection)** | <img src="docs/screenshots/login-access-restricted.png" width="320" alt="Access Restricted" /> | Error banner: *"Access restricted. Please login using your official domain email."* |
+| **Session Validation Loading** | <img src="docs/screenshots/session-loading.png" width="320" alt="Validating Session" /> | Splash screen with animated spinner while session and domain membership are validated |
+| **Authenticated Workspace Dashboard** | <img src="docs/screenshots/dashboard-authenticated.png" width="320" alt="Authenticated Dashboard" /> | Responsive corporate dashboard with profile card, verification badge, and security policies |
+| **Session Restoration on Refresh** | <img src="docs/screenshots/dashboard-session-restored.png" width="320" alt="Session Restored" /> | Verified persistent authentication without re-login after browser refresh |
+| **Mobile Responsive Login** | <img src="docs/screenshots/login-mobile.png" width="180" alt="Mobile Login" /> | Single-column mobile layout with 52px touch-friendly Google SSO button |
+| **Live Netlify Production Deployment** | <img src="docs/screenshots/live-login.png" width="320" alt="Live Production Login" /> | Operational SPA deployment on `harmonious-squirrel-5cbd03.netlify.app` |
+
+---
+
+### Detailed Scenario Walkthroughs
+
+#### 1. Unauthorized Domain Rejection (Security Gate)
+When an external Google account (e.g. `@gmail.com` or spoofed domains) attempts to authenticate, the security gate immediately invokes `signOut(auth)`, purges transient credentials, and displays the required specification error banner:
+
+> *"Access restricted. Please login using your official domain email."*
+
+![Unauthorized Domain Rejection](docs/screenshots/login-access-restricted.png)
+
+#### 2. Authenticated Workspace Dashboard
+Upon logging in with an authorized identity, the user is admitted to the secure portal displaying user avatar fallback initials, verification badges, Firebase UID, authorized domain status, and enterprise security policies:
+
+![Authenticated Workspace Dashboard](docs/screenshots/dashboard-authenticated.png)
+
+#### 3. Session Validation & Hydration Splash
+During application initialization or route hydration, the `<LoadingScreen />` guards against premature component mounting and prevents any flash of protected dashboard content:
+
+![Session Validation Splash](docs/screenshots/session-loading.png)
+
+#### 4. Seamless Session Restoration on Page Reload
+On browser refresh (F5), Firebase session storage is re-evaluated and re-validated against domain rules, restoring the active dashboard without requiring the user to re-authenticate:
+
+![Session Restoration on Refresh](docs/screenshots/dashboard-session-restored.png)
+
+#### 5. Cross-Platform Responsive Breakpoints
+The UI dynamically adapts across desktop and mobile form factors:
+
+| Desktop Split-Screen (`>= 900px`) | Mobile Viewport (`< 600px`) |
+| :---: | :---: |
+| <img src="docs/screenshots/login-desktop.png" width="460" alt="Desktop View" /> | <img src="docs/screenshots/login-mobile.png" width="230" alt="Mobile View" /> |
+
+#### 6. Live Production Netlify Deployment
+The production deployment on Netlify renders SPA routes with 200 rewrites, redirects root `/` to `/login`, and safeguards direct unauthorized access to `/dashboard`:
+
+![Live Netlify Production Login](docs/screenshots/live-login.png)
 
 ### Desktop Split-Screen Login (`>= 900px`)
 ```text
