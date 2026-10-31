@@ -81,6 +81,7 @@ Organizations utilizing enterprise productivity tools often face security and op
 ├── contexts/
 │   └── AuthContext.tsx             # Global auth context, role fetching, session lifecycle
 ├── docs/
+│   ├── ARCHITECTURE.md             # System architectural specification and design patterns
 │   ├── AUTHENTICATION_FLOW.md      # Detailed authentication architectural specifications
 │   ├── FIREBASE_SETUP.md           # Step-by-step console setup guide
 │   └── TESTING_CHECKLIST.md        # QA verification matrix with 15 scenarios
