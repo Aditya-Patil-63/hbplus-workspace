@@ -2,6 +2,8 @@
 
 > Enterprise Workspace & Single Sign-On (SSO) Portal built with **Expo**, **React Native for Web**, and **Firebase Authentication**, strictly restricted to authorized company domain accounts (`@hbplus.fit`).
 
+**Live Demo**: [https://harmonious-squirrel-5cbd03.netlify.app](https://harmonious-squirrel-5cbd03.netlify.app)
+
 ---
 
 ## 1. Overview & Problem Statement
@@ -146,7 +148,7 @@ EXPO_PUBLIC_ALLOWED_DOMAIN=hbplus.fit
 
 Follow the detailed walkthrough in [`docs/FIREBASE_SETUP.md`](docs/FIREBASE_SETUP.md):
 1. **Authentication Provider**: Enable **Google** in Firebase Authentication Console.
-2. **Authorized Domains**: Add `localhost` and your Netlify domain (e.g., `your-app.netlify.app`).
+2. **Authorized Domains**: Add `localhost` and your Netlify domain (`harmonious-squirrel-5cbd03.netlify.app`).
 3. **Firestore Security Rules**: Deploy the rules from [`firestore.rules`](firestore.rules).
 4. **User Roles**: Roles cannot be modified by the client. To grant admin privileges, create a document in collection `users` with ID = `{user.uid}` and field `role: "admin"`.
 
@@ -244,8 +246,11 @@ This project is fully configured for deployment on [Netlify](https://www.netlify
    * `EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID`
    * `EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID`
    * `EXPO_PUBLIC_ALLOWED_DOMAIN`
-3. In Firebase Console under **Authentication > Settings > Authorized domains**, add your Netlify domain.
-4. Trigger a deploy. Netlify will run `npx expo export --platform web` and publish `dist`.
+3. In Firebase Console under **Authentication > Settings > Authorized domains**, add `harmonious-squirrel-5cbd03.netlify.app`.
+4. Trigger a deploy or run `npx netlify-cli deploy --dir=dist --prod`. Netlify runs `npx expo export --platform web` and publishes `dist`.
+
+**Live Production Site**: [https://harmonious-squirrel-5cbd03.netlify.app](https://harmonious-squirrel-5cbd03.netlify.app)  
+**Status**: Deployed and operational (SPA routing active, root redirects to `/login`, `/dashboard` protected).
 
 ---
 

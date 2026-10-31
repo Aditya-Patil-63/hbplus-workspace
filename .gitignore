@@ -42,3 +42,6 @@ yarn-error.*
 *.mobileprovision
 *.tsbuildinfo
 .metro-health-check*
+
+# Local Netlify folder
+.netlify
