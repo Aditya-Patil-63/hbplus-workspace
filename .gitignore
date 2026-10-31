@@ -1,0 +1,44 @@
+# dependencies
+node_modules/
+
+# Expo
+.expo
+.expo/
+.expo/*
+dist/
+web-build/
+expo-env.d.ts
+
+# Environments
+.env
+.env.*
+!.env.example
+
+# Native Credentials
+google-services.json
+GoogleService-Info.plist
+
+# Generated Native Folders
+ios/
+android/
+
+# Logs
+*.log
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS / OS artifacts
+.DS_Store
+
+# Native build artifacts & keys
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.pem
+*.mobileprovision
+*.tsbuildinfo
+.metro-health-check*

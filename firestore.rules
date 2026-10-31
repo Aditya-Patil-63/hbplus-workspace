@@ -1,0 +1,20 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{db}/documents {
+    function isCompany() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email.matches('.*@hbplus\\.fit');
+    }
+
+    match /users/{uid} {
+      // Users can only read their own profile; client write is disabled (roles assigned via Console)
+      allow read: if isCompany() && request.auth.uid == uid;
+      allow write: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
